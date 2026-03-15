@@ -10,9 +10,8 @@ Database.Init();
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
-var app = builder.Build();
+
 app.MapHub<ChatHub>("/chathub");
 
 // ════════════════════════════════════════════
